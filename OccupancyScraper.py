@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
 import pandas as pd
 from bs4 import BeautifulSoup
 from sys import exit
@@ -52,12 +53,15 @@ def getPercentagesFromGoogleMaps(URLs: pd.DataFrame, loadtime=10, waittime=3, op
                     aria_label = aria_label.split(" ")
                     percentagesList.append(["\"" + linkName + "\"", aria_label[1].replace('%', ''), aria_label[4].replace('%', '')])
             if not foundCurrentPercentages:
-                percentagesList.append(["\"" + linkName + "\"", "", "", "", "Unable to find current percentages"])
+                percentagesList.append(["\"" + linkName + "\"", "", "", "", "Unable to find current percentages. Potentially closed or current occupancy is unavailable."])
             
             driver.quit()
-
+        except TimeoutException as t:
+            print("Error: Page timed out before the CSS selector could be found, potentially indicative of the element not being publicly displayed.")
+            percentagesList.append(["\"" + linkName + "\"", "", "", "", "Page timed out before CSS selector was found. Potentially the occupancy values are not shown"])
         except Exception as e:
-            print("Issue occurred for", linkName,"\nError:", e)
+            print("Issue occurred for", linkName,"\n", e)
+            percentagesList.append(["\"" + linkName + "\"", "", "", "", "An error occurred"])
             continue
     
     return percentagesList

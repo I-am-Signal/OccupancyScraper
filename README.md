@@ -1,4 +1,4 @@
-# Occupancy-Scraper
+# OccupancyScraper
 A Python script for scraping current occupation information from the URLs specified from freely available Google Maps data. This information is then compiled into a single CSV formatted document for easy viewing and use.
 
 ## Prerequisites
@@ -32,8 +32,10 @@ INPUTFILENAME = "URL_CSV_Documents/TestURLs.csv"
 Open the command prompt and navigate to the folder containing this document (cd filepath-to-directory/Occupancy-Scraper on Windows). To run the program, type `python OccupancyScraper.py` and press the `Enter` key.
 
 ## Provided CSV Files
-* `NewPizzaIndex.csv`
+* `NewPizzaIndexURLs.csv`
     * URLs of gay bars local to government offices around Washington DC. Data about these bars can be used as essentially a new version of the popularized [Pizza Index](https://knowyourmeme.com/memes/pizza-meter-pentagon-pizza-orders). This version uses the knowledge that a significant portion of government workers are of the LGBT community. If there is a reduction in occupancy on a typically highly occupied night, this may or may not be indicative of potential for international government action. The New Pizza Index was the original intent of writing this program, but I realized that this program can be used for any set of Google Maps URLs and may be of use to other people.
+* `PizzaIndexURLs.csv`
+    * URLs of a few different pizza places local to government offices around Washington DC. Data about these restaurants can be used to gauge the popularized [Pizza Index](https://knowyourmeme.com/memes/pizza-meter-pentagon-pizza-orders).
 * `TestURLs.csv`
     * URLs of a few places (including both 24/7 and limited hour locations) that can be used in testing the program or for demonstration purposes. This is currently the default value for the variable `INPUTFILENAME` in the `OccupancyScraper.py` file and can be changed to the filename you wish to search using.
 * `URLs.csv`

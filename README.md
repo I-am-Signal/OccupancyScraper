@@ -2,19 +2,11 @@
 A Python script for scraping current occupation information from the URLs specified from freely available Google Maps data. This information is then compiled into a single CSV formatted document for easy viewing and use.
 
 ## Prerequisites
-<<<<<<< HEAD
 An installation of Google Chrome is required for this program. You can download Chrome directly from [Google](www.google.com/chrome/dr/download/).
 
 This program requires the use of a Python interpreter. You can download one directly from [python.org](https://www.python.org/downloads/) (ensure you install version 3.9 or newer). Depending on your installation, you may have access to the `pip` tool that will allow you to install these libraries. If you do not have pip installed, please follow a [tutorial](https://www.youtube.com/watch?v=81SHyuNLMOY). 
 
 Once you have a functioning interpreter, you must have the Python libraries Beautiful Soup 4 (bs4), Pandas, and Selenium installed. To begin getting your Python environment set up for this program, you must open the command prompt. Assuming your version of Python has the `pip` tool installed, you can simply type `pip install bs4, pandas, selenium` and press the `Enter` key to install these libraries.
-=======
-An installation of Google Chrome is required for this program. You can download Chrome directly from Google.
-
-This program requires the use of a Python interpreter. You can download one directly from [python.org](https://www.python.org/downloads/) (ensure you install version 3.9 or newer). 
-
-Once you have a functioning interpreter, you may need to download some Python libraries (Beautiful Soup 4 (bs4), Pandas, and Selenium). Depending on your installation, you may have access to the `pip` tool that will allow you to install these libraries. If you do not have pip installed, please follow a [tutorial](https://www.youtube.com/watch?v=81SHyuNLMOY). To begin getting your Python environment set up for this program, you must open the command prompt. Assuming your version of Python has the `pip` tool installed, you can simply type `pip install bs4, pandas, selenium` and press the `Enter` key to install these libraries.
->>>>>>> d526c53 (Program and Readme corrections)
 
 The program can now be ran with default settings at this point. 
 
@@ -33,19 +25,11 @@ INPUTFILENAME = "URL_CSV_Documents/TestURLs.csv"
 * `CHECKVPN`: this variable controls the initial VPN check message prompt. It is recommended that you are using a VPN when running this program, however it is not required. You can turn off the initial VPN check message prompt by changing the value of this variable from the default `True` to `False`.
 * `WAITTIME`: this variable controls the arbitrary wait time (in seconds) used to get around scraping bot blockers when they are present. By default, this variable is set to the value `3` for 3 seconds.
 * `LOADTIME`: this variable controls the amount of time (in seconds) the program times out after waiting for the page to load. By default, this variable is set to the value `10` for 10 seconds.
-<<<<<<< HEAD
-* `OUTPUTFILENAME`: this variable controls the filename of the output file. By default, this variable is set to the value `ScrapedOccupancyInformation.csv`.
-* `INPUTFILENAME`: this variable controls the filename of the input file that this program will search using. If you wish to change where the program sources its input URLs from, you can change the value to the desired csv file (such as the template file `URLs.csv`). By default, this variable is set to the value `URL_CSV_Documents/TestURLs.csv`.
-
-## Run the Program
-Open the command prompt and navigate to the folder containing this document (`cd filepath-to-directory/Occupancy-Scraper` on Windows). To run the program, type `python OccupancyScraper.py` and press the `Enter` key.
-=======
 * `OUTPUTFILENAME`: this variable controls the filename of the output file. By default, this variable is set to the value is `ScrapedOccupancyInformation.csv`.
 * `INPUTFILENAME`: this variable controls the filename of the input file that this program will search for. If you wish to change where the program sources its input URLs from, you can change the value to the desired csv file (such as the template file `URLs.csv`). By default, this variable is to the value `URL_CSV_Documents/NewPizzaIndexURLs.csv`.
 
 ## Run the Program
 Open the command prompt and navigate to the folder containing this document (cd filepath-to-directory/Occupancy-Scraper on Windows). To run the program, type `python OccupancyScraper.py` and press the `Enter` key.
->>>>>>> d526c53 (Program and Readme corrections)
 
 ## Provided CSV Files
 * `NewPizzaIndex.csv`
